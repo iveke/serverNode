@@ -1,6 +1,4 @@
-import getAllPost from "../../helpers/getAllPost.js";
 import HttpError from "../../helpers/HttpError.js";
-import updateJSON from "../../helpers/updateJSON.js";
 import { Post } from "../../model/Post.js";
 
 const updatePost = async (req, res) => {
