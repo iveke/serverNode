@@ -5,7 +5,9 @@ export const handleSaveError = (error, data, next) => {
 };
 
 export const preUpdate = function (next) {
-  this.option.new = true;
+  console.log(this);
+
+  this.options.new = true;
   this.options.runValidators = true;
   next();
 };

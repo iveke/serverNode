@@ -2,10 +2,9 @@ import HttpError from "../../helpers/HttpError.js";
 import { Post } from "../../model/Post.js";
 
 const getPostById = async (req, res) => {
+  const { _id } = req.user;
   const postId = req.params.postId;
-  // console.log(req.params);
-  // console.log(postId);
-  const post = await Post.findById(postId);
+  const post = await Post.findOne({ _id: postId, owner: _id });
   if (!post) {
     throw HttpError(404, "Not found by this ID");
   }

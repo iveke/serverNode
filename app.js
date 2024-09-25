@@ -15,8 +15,9 @@ app.use((req, res, next) => {
 });
 // app.use("/", postRouter)
 // app.use("/:postId", postRouter)
-app.use("/po*st/", postRouter);
-app.use("/post/:postId", postRouter);
+app.use("/api/auth", authRouter);
+app.use("/api/po*st/", postRouter);
+// app.use("/post/:postId", postRouter);
 
 app.use("/auth", authRouter);
 

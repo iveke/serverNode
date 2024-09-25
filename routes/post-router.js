@@ -3,14 +3,14 @@ import express from "express";
 import postController from "../controllers/post.controller.js";
 import validateBody from "../decorator/validateBody.js";
 import { addPostSchema, editPostSchema } from "../shema/post-schema.js";
-import { isValidId, isEmptyBody } from "../middlewares/index.js";
+import { isValidId, isEmptyBody, authorization } from "../middlewares/index.js";
 
 export const app = express();
 
 const postRouter = express.Router();
 
 // const postPath = path.resolve("post", "post.json");
-
+postRouter.use(authorization);
 postRouter.get("/", postController.getPosts);
 
 postRouter.get("/:postId", isValidId, postController.getPostById);

@@ -14,8 +14,8 @@ mongoose
     process.exist(1);
   });
 
-console.log(DB_HOST);
-console.log("hel");
+// console.log(DB_HOST);
+// console.log("hel");
 
 // app.listen(3001, () => console.log("Server run"));
 // Du9GCjt4W6Cq9wkL

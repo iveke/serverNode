@@ -19,7 +19,7 @@ export const addPostSchema = Joi.object({
 
 export const editPostSchema = Joi.object({
   title: Joi.string().messages({ "string.base": "Title is not string" }),
-  body: Joi.string().messages({
+  description: Joi.string().messages({
     "strign.base": "Body is not string",
   }),
   level: Joi.string().messages({

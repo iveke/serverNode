@@ -8,7 +8,7 @@ const postSchema = new Schema(
       minLength: 1,
       required: true,
     },
-    body: {
+    description: {
       type: String,
       minLength: 1,
       required: true,
@@ -16,6 +16,11 @@ const postSchema = new Schema(
     level: {
       type: String,
       enum: ["easy", "middle", "hard"],
+    },
+    owner: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: "user",
     },
     relevant: {
       type: Boolean,
